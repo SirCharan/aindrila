@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Instagram, Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -29,13 +30,15 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a
-          href="#"
-          className={`font-serif text-2xl tracking-tight transition-colors duration-300 ${
-            scrolled ? "text-warm-900" : "text-white"
-          }`}
-        >
-          Aindrila
+        <a href="#" aria-label="Aindrila Bhowmik — Home">
+          <Image
+            src={scrolled ? "/logo.svg" : "/logo-white.svg"}
+            alt="Aindrila Bhowmik logo"
+            width={130}
+            height={40}
+            priority
+            className="transition-opacity duration-300"
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
